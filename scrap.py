@@ -58,8 +58,20 @@ def get_kuota(driver):
         EC.visibility_of_element_located((By.CLASS_NAME, "QuotaDetail__style__t1"))
     )
     print("Clicked detail kuota")
-    print(kuota.text)
-    return kuota.text
+    trimed_kuota = kuota.text.split()[0]
+    print(trimed_kuota)
+    return float(trimed_kuota)
+
+
+def get_nomor(driver):
+    print("getting nomor")
+    nomor = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.CLASS_NAME, "StatusInfo__style__number"))
+    )
+    print(nomor)
+    trimed_nomor = nomor.text.replace(" ", "")
+    print(trimed_nomor)
+    return trimed_nomor
 
 
 with open(
@@ -100,8 +112,9 @@ with open(
             login_indicator = (By.CLASS_NAME, "HeaderNavigationV2__style__profile")
 
             if is_logged_in(driver, login_indicator):
+                nomor = get_nomor(driver)
                 kuota = get_kuota(driver)
-                #db.update_client_data(kuota, nomor)
+                db.update_client_data(kuota, nomor)
             else:
                 click_element(
                     driver,

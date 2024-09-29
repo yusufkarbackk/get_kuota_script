@@ -25,7 +25,7 @@ def update_client_data(newKuota, nomor):
     try:
         cursor.execute(
             """
-            UPDATE 'clients' SET 'quota'=(%s), 'last_update'=NOW() WHERE 'nomor'=(%s)
+            UPDATE clients SET quota=(%s) WHERE nomor=(%s)
             """,
             (newKuota, nomor),
         )
