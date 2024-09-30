@@ -68,7 +68,6 @@ def get_nomor(driver):
     nomor = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.CLASS_NAME, "StatusInfo__style__number"))
     )
-    print(nomor)
     trimed_nomor = nomor.text.replace(" ", "")
     print(trimed_nomor)
     return trimed_nomor
@@ -114,7 +113,8 @@ with open(
             if is_logged_in(driver, login_indicator):
                 nomor = get_nomor(driver)
                 kuota = get_kuota(driver)
-                db.update_client_data(kuota, nomor)
+                db.update_kuota_request(nomor, kuota)
+                # db.insert_history_data(nomor)
             else:
                 click_element(
                     driver,
