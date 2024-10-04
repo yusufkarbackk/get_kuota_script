@@ -1,5 +1,3 @@
-Profile 1,sxtstock1,batiku232
-Profile 2,BogorDima,batiku232
+Profile 2,BogorDima,batiku232,081112520104
 Profile 3,BekasiDima,batiku232
-Profile 4,dimaserang,batiku232
-Profile 5,ArthaBalik,batiku232 
+Profile 4,dimaserang,batiku232,081112520109

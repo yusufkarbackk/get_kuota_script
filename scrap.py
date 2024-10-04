@@ -77,7 +77,7 @@ with open(
     "/Users/yusufkarback/ambis/selenium_basic/account-twitter/akun-twt.txt"
 ) as profileLoop:
     for profile in profileLoop:
-        profiles = profile.strip().split(",")
+        profiles = profile.strip().split(",")   
         if len(profiles) != 3:
             print(f"Invalid profile format: {profile}")
             continue
@@ -111,7 +111,7 @@ with open(
             login_indicator = (By.CLASS_NAME, "HeaderNavigationV2__style__profile")
 
             if is_logged_in(driver, login_indicator):
-                nomor = get_nomor(driver)
+                nomor = get_nomor(driver)   
                 kuota = get_kuota(driver)
                 db.update_kuota_request(nomor, kuota)
                 # db.insert_history_data(nomor)
