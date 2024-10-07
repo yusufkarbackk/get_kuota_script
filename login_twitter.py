@@ -13,10 +13,19 @@ import time
 
 # Get the username and email passed from the PHP controller
 print(sys.argv)
-username = sys.argv[1]
-password = sys.argv[2]
-number = sys.argv[3]
-profile = sys.argv[4]
+# client = sys.argv[1]
+# password = sys.argv[2]
+# number = sys.argv[3]
+# chrome_profile = sys.argv[4]
+# company = sys.argv[5]
+# team_flag = sys.argv[6]
+
+client = "sxtstock1"
+password = "batiku232"
+number = "081119026097"
+chrome_profile = "20"
+company = "sxtstock1"
+team_flag = "bati"
 
 
 def click_element(driver, locator, timeout=5):
@@ -67,7 +76,7 @@ def get_nomor(driver):
     return trimed_nomor
 
 
-print(f"{username} Running")
+print(f"{client} Running")
 
 sukses = False
 
@@ -77,7 +86,7 @@ while sukses == False:
     options.add_argument(
         f"--user-data-dir=/Users/yusufkarback/Library/Application\ Support/Google/Chrome"
     )
-    options.add_argument(f"--profile-directory={profile}")
+    options.add_argument(f"--profile-directory={chrome_profile}")
     options.add_argument("--blink-settings=imagesEnabled=false")
     options.add_argument("--window-position=0,0")
     options.add_argument("--window-size=1366,768")
@@ -85,8 +94,9 @@ while sukses == False:
         "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     )
     try:
-        service = Service(executable_path="./chromedriver")
+        service = Service(executable_path="/Users/yusufkarback/ambis/selenium_basic/chromedriver")
         driver = webdriver.Chrome(service=service, options=options)
+
         driver.get("https://my.telkomsel.com/login/web")
 
         login_indicator = (By.CLASS_NAME, "HeaderNavigationV2__style__profile")
@@ -94,17 +104,40 @@ while sukses == False:
         if is_logged_in(driver, login_indicator):
             nomor = get_nomor(driver)
             kuota = get_kuota(driver)
-            db.update_kuota_request(nomor, kuota)
+            db.insert_client(
+                client,
+                company,
+                team_flag,
+                nomor,
+                kuota,
+                chrome_profile,
+                "/Users/yusufkarback/Library/Application\ Support/Google/Chrome",
+            )
             sukses = True
             # db.insert_history_data(nomor)
         else:
-            click_element(
-                driver,
-                (
-                    By.XPATH,
-                    "//div[contains(@class, 'PopupPromotion__style__promoButton')]//div[contains(@class, 'Button__style__neutral.Button__style__lg')]",
-                ),
-            )
+            try:
+
+                close_icon = WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable(
+                        (
+                            By.XPATH,
+                            "//div[@data-testid='bottomSheetClose']//i[contains(@class, 'ico') and contains(@class, 'icoClose') and contains(@class, 'BottomSheet_style_closeIcon')]",
+                        )
+                    )
+                )
+                close_icon.click()
+
+            # click_element(
+            #     driver,
+            #     (
+            #         By.CSS_SELECTOR,
+            #         "button.Button_style_neutral__Button_style_lg[data-testid='button']",
+            #     ),
+            # )
+            except:
+                print("Pop-up not found or already closed")
+
             # click_element(driver, (By.CLASS_NAME, "ico.icoclose"))
             print("click metode lain")
 
@@ -121,7 +154,7 @@ while sukses == False:
                 EC.presence_of_element_located((By.ID, "username_or_email"))
             )
             username_field.clear()
-            username_field.send_keys(username)
+            username_field.send_keys(client)
 
             password_field = driver.find_element(By.ID, "password")
             password_field.clear()
@@ -132,12 +165,14 @@ while sukses == False:
             # driver.get("https://my.telkomsel.com/web")
             time.sleep(20)
             # get_kuota(driver)
+            driver.quit()
 
     except Exception as e:
         print(f"An error occurred: {e}")
-driver.quit()
+        webdriver.Chrome().quit()
+# driver.quit()
 # Write the data to a text file
 with open("/Users/yusufkarback/ambis/selenium_basic/new_akun_twt.txt", "a") as file:
-    file.write(f"profile{int(profile)+1},{username},{password},{number}\n")
+    file.write(f"profile{int(chrome_profile)+1},{client},{password}\n")
 
-print(f"User {username} created successfully!")
+print(f"User {client} created successfully!")
