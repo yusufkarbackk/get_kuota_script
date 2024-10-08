@@ -19,12 +19,12 @@ def insert_client(
     client, company, team_flag, nomor, kuota, chrome_profile, profile_path
 ):
     # determine status here from kuota parameter
-    url = "http://localhost:8080/client"
+    url = "http://localhost:8080/automation"
     data = {
         "client": client,
         "company": company,
         "team_flag": team_flag,
-        "nomor": nomor,
+        "phoneNumber": nomor,
         "quota": kuota,
         "chrome_profile": chrome_profile,
         "profile_path": profile_path,

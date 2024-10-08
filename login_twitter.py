@@ -23,7 +23,7 @@ print(sys.argv)
 client = "sxtstock1"
 password = "batiku232"
 number = "081119026097"
-chrome_profile = "20"
+chrome_profile = "40"
 company = "sxtstock1"
 team_flag = "bati"
 
@@ -58,9 +58,15 @@ def get_kuota(driver):
     driver.get("https://my.telkomsel.com/detail-quota/internet")
 
     kuota = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "QuotaDetail__style__t1"))
+        EC.visibility_of_element_located(
+            (
+                By.XPATH,
+                "//div[contains(@class, 'QuotaDetail__style__quotaInfoWrapper')]//span[contains(@class, 'QuotaDetail__style__t1')]",
+            )
+        )
     )
     print("Clicked detail kuota")
+    print(kuota.text)
     trimed_kuota = kuota.text.split()[0]
     print(trimed_kuota)
     return float(trimed_kuota)
@@ -82,6 +88,7 @@ sukses = False
 
 while sukses == False:
     options = Options()
+    options.page_load_strategy = "normal"
     options.add_argument("--disable-notifications")
     options.add_argument(
         f"--user-data-dir=/Users/yusufkarback/Library/Application\ Support/Google/Chrome"
@@ -94,7 +101,9 @@ while sukses == False:
         "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     )
     try:
-        service = Service(executable_path="/Users/yusufkarback/ambis/selenium_basic/chromedriver")
+        service = Service(
+            executable_path="/Users/yusufkarback/ambis/selenium_basic/chromedriver"
+        )
         driver = webdriver.Chrome(service=service, options=options)
 
         driver.get("https://my.telkomsel.com/login/web")
