@@ -1,23 +1,30 @@
+import json
 import os
 from playwright.sync_api import sync_playwright
 import sys
-import db
 
 client = sys.argv[1]
 password = sys.argv[2]
 number = sys.argv[3]
-chrome_profile = sys.argv[4]
-company = sys.argv[5]
-team_flag = sys.argv[6]
+# chrome_profile = sys.argv[4]
+company = sys.argv[4]
+team_flag = sys.argv[5]
+
+# client = "sxtstock1"
+# password = "batiku232"
+# number = "081119026097"
+# # chrome_profile = "52"
+# company = "sxtstock1"
+# team_flag = "bati"
 
 profile_dir = (
-    f"/Users/yusufkarback/Library/Application Support/Google/Chrome/{chrome_profile}"
+    f"/Users/yusufkarback/Library/Application Support/Google/Chrome/profile-{client}"
 )
-
+chrome_profile = f"profile-{client}"
 # Check if the directory exists, if not, create it
 remove_popup = 1
 if not os.path.exists(profile_dir):
-    print("create new profile")
+    # print("create new profile")
     os.makedirs(profile_dir)
 sukses = False
 while sukses == False:
@@ -34,25 +41,21 @@ while sukses == False:
 
         profile_div = page.locator("div.HeaderNavigationV2__style__profile")
         if profile_div.is_visible():
-            print("already logged in: halaman detail kuota")
+            # print("already logged in: halaman detail kuota")
             page.goto("https://my.telkomsel.com/detail-quota/internet")
             span_text = page.text_content("span.QuotaDetail__style__t1")
             trimmed_text = span_text.split()[0]
-            print(float(trimmed_text))
-            db.insert_client(
-                client,
-                company,
-                team_flag,
-                number,
-                float(trimmed_text),
-                chrome_profile,
-                profile_dir,
-            )
+            # print(float(trimmed_text))
+            with open(
+                "/Users/yusufkarback/ambis/selenium_basic/new_akun_twt.txt", "a"
+            ) as file:
+                file.write(f"{chrome_profile},{client},{password}\n")
+            sukses = True
+            # print("sukses true")
             browser.close()
-            break
         else:
             # time.sleep(120)
-            print("not logged in")
+            # print("not logged in")
 
             page.click("div.DialogInstallPWADesktop__style__closeIcon")
 
@@ -60,10 +63,10 @@ while sukses == False:
             page.click('text="Masuk dengan metode lain"')
             # page.click('text="Lanjutkan di Web"')
             page.click('text="Masuk Dengan Twitter"')
-            print("masukin usernae")
-            page.fill("input[name='session[username_or_email]']", "sxtstock1")
-            print("masukin password")
-            page.fill("input[name='session[password]']", "batiku232")
+            # print("masukin usernae")
+            page.fill("input[name='session[username_or_email]']", client)
+            # print("masukin password")
+            page.fill("input[name='session[password]']", password)
             page.click(
                 'input[type="checkbox"]#remember'
             )  # Selects the checkbox by ID 'remember'
@@ -72,3 +75,15 @@ while sukses == False:
             page.wait_for_selector(
                 "div.HeaderNavigationV2__style__profile"
             )  # Replace with the correct selector for the element
+
+data = {
+    "client": client,
+    "company": company,
+    "team_flag": team_flag,
+    "number": number,
+    "quota": float(trimmed_text),
+    "chrome_profile": chrome_profile,
+    "profile_path": profile_dir,
+}
+print(json.dumps(data))
+sys.stdout.flush()

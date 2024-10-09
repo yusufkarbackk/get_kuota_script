@@ -1,1 +1,2 @@
-profile9,sxtstock1,batiku232,12345678
+profile-dimaserang,dimaserang,batiku232
+profile-BogorDima,BogorDima,batiku232

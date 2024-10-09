@@ -1,159 +1,76 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import json
+import os
+from playwright.sync_api import sync_playwright
+import sys
 import db
-import time
 import datetime
 
 Y = datetime.date.today().year
 M = datetime.date.today().month
 D = datetime.date.today().day
 
-# clear report
-# Clear report
-with open(
-    f"/Users/yusufkarback/ambis/selenium_basic/report{Y}{M}{D}_result_cek_kuota-1.txt",
-    "w",
-) as w:
-    pass
 
-
-def click_element(driver, locator, timeout=5):
-    try:
-        element = WebDriverWait(driver, timeout).until(
-            EC.visibility_of_element_located(locator)
-        )
-        element.click()
-        return True
-    except (TimeoutException, NoSuchElementException):
-        print(f"Element not found or not clickable: {locator}")
-        return False
-
-
-def is_logged_in(driver, login_indicator_element):
-    try:
-        # Wait for the login indicator element to be visible
-        WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located(login_indicator_element)
-        )
-        print("logged in")
-        return True
-    except:
-        return False
-
-
-def get_kuota(driver):
-    # Navigate to quota details
-    print("Waiting to click detail kuota")
-    driver.get("https://my.telkomsel.com/detail-quota/internet")
-
-    kuota = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "QuotaDetail__style__t1"))
-    )
-    print("Clicked detail kuota")
-    trimed_kuota = kuota.text.split()[0]
-    print(trimed_kuota)
-    return float(trimed_kuota)
-
-
-def get_nomor(driver):
-    print("getting nomor")
-    nomor = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "StatusInfo__style__number"))
-    )
-    trimed_nomor = nomor.text.replace(" ", "")
-    print(trimed_nomor)
-    return trimed_nomor
-
-
-with open(
-    "/Users/yusufkarback/ambis/selenium_basic/account-twitter/akun-twt.txt"
-) as profileLoop:
-    for profile in profileLoop:
-        profiles = profile.strip().split(",")   
+with open("/Users/yusufkarback/ambis/selenium_basic/new_akun_twt.txt") as profiles:
+    for profile in profiles:
+        profiles = profile.strip().split(",")
         if len(profiles) != 3:
             print(f"Invalid profile format: {profile}")
             continue
 
         profile_name, username, password = profiles
+        print(profile_name)
+        print(username)
+        print(password)
+        profile_dir = f"/Users/yusufkarback/Library/Application Support/Google/Chrome/{profile_name}"
+        # Check if the directory exists, if not, create it
+        if not os.path.exists(profile_dir):
+            # print("create new profile")
+            os.makedirs(profile_dir)
+        sukses = False
+        while sukses == False:
 
-        if username == "#terminated" or username == "#notwitter":
-            print(f"{profile_name} skipped: {username}")
-            continue
-
-        print(f"{username} Running")
-
-        options = Options()
-        options.add_argument("--disable-notifications")
-        options.add_argument(
-            f"--user-data-dir=/Users/yusufkarback/Library/Application\ Support/Google/Chrome"
-        )
-        options.add_argument(f"--profile-directory={profile_name}")
-        options.add_argument("--blink-settings=imagesEnabled=false")
-        options.add_argument("--window-position=0,0")
-        options.add_argument("--window-size=1366,768")
-        options.binary_location = (
-            "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-        )
-
-        try:
-            service = Service(executable_path="./chromedriver")
-            driver = webdriver.Chrome(service=service, options=options)
-            driver.get("https://my.telkomsel.com/login/web")
-
-            login_indicator = (By.CLASS_NAME, "HeaderNavigationV2__style__profile")
-
-            if is_logged_in(driver, login_indicator):
-                nomor = get_nomor(driver)   
-                kuota = get_kuota(driver)
-                db.update_kuota_request(nomor, kuota)
-                # db.insert_history_data(nomor)
-            else:
-                click_element(
-                    driver,
-                    (
-                        By.XPATH,
-                        "//div[contains(@class, 'PopupPromotion__style__promoButton')]//div[contains(@class, 'Button__style__neutral.Button__style__lg')]",
-                    ),
+            with sync_playwright() as p:
+                browser = p.chromium.launch_persistent_context(
+                    headless=False,
+                    executable_path="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+                    user_data_dir=profile_dir,
+                    args=["--disable-notifications"],
                 )
-                # click_element(driver, (By.CLASS_NAME, "ico.icoclose"))
-                print("click metode lain")
+                page = browser.new_page()
+                page.goto("https://my.telkomsel.com/login/web")
 
-                click_element(driver, (By.CLASS_NAME, "LoginFormV2__style__socialBtn"))
-                print("click login twitter")
-                click_element(
-                    driver,
-                    (
-                        By.CLASS_NAME,
-                        "SocialLogin__style__socialButton.SocialLogin__style__twitter",
-                    ),
-                )
-                username_field = WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.ID, "username_or_email"))
-                )
-                username_field.clear()
-                username_field.send_keys(username)
+                profile_div = page.locator("div.HeaderNavigationV2__style__profile")
+                if profile_div.is_visible():
+                    # print("already logged in: halaman detail kuota")
+                    nomor = page.text_content("span.StatusInfo__style__number")
 
-                password_field = driver.find_element(By.ID, "password")
-                password_field.clear()
-                password_field.send_keys(password)
+                    page.goto("https://my.telkomsel.com/detail-quota/internet")
+                    kuota = page.text_content("span.QuotaDetail__style__t1")
+                    trimmed_kuota = kuota.split()[0]
+                    trimmed_nomor = nomor.replace(" ", "")
+                    sukses = True
+                    db.update_kuota_request(trimmed_nomor, trimmed_kuota)
+                    # print("sukses true")
+                    browser.close()
+                else:
+                    # time.sleep(120)
+                    # print("not logged in")
 
-                click_element(driver, (By.ID, "remember"))
-                click_element(driver, (By.ID, "allow"))
-                # driver.get("https://my.telkomsel.com/web")
-                time.sleep(20)
-                # get_kuota(driver)
+                    page.click("div.DialogInstallPWADesktop__style__closeIcon")
 
-        except Exception as e:
-            print(f"An error occurred: {e}")
+                    page.click('text="Lanjutkan di Web"')
+                    page.click('text="Masuk dengan metode lain"')
+                    # page.click('text="Lanjutkan di Web"')
+                    page.click('text="Masuk Dengan Twitter"')
+                    # print("masukin usernae")
+                    page.fill("input[name='session[username_or_email]']", "sxtstock1")
+                    # print("masukin password")
+                    page.fill("input[name='session[password]']", "batiku232")
+                    page.click(
+                        'input[type="checkbox"]#remember'
+                    )  # Selects the checkbox by ID 'remember'
 
-        finally:
-            driver.quit()
-            time.sleep(5)
+                    page.click("#allow")
+                    page.wait_for_selector(
+                        "div.HeaderNavigationV2__style__profile"
+                    )  # Replace with the correct selector for the element
