@@ -63,24 +63,32 @@ while sukses == False:
             page.click('text="Masuk dengan metode lain"')
             # page.click('text="Lanjutkan di Web"')
             page.click('text="Masuk Dengan Twitter"')
-            # print("masukin usernae")
-            page.fill("input[name='session[username_or_email]']", client)
-            # print("masukin password")
-            page.fill("input[name='session[password]']", password)
-            page.click(
-                'input[type="checkbox"]#remember'
-            )  # Selects the checkbox by ID 'remember'
 
             page.click("#allow")
-            page.wait_for_selector(
-                "div.HeaderNavigationV2__style__profile"
-            )  # Replace with the correct selector for the element
+            page.click("#allow")
+            # page.locator("span:has-text('Sign in to X')").wait_for()
+
+            # print("masukin usernae")
+            page.locator('input[name="text"]').fill(client)
+            page.click('text="Next"')
+            page.locator('input[name="password"]').fill(password)
+            page.click('text="Log in"')
+
+            page.wait_for_selector("div.HeaderNavigationV2__style__profile")
+
+            page.goto("https://my.telkomsel.com/detail-quota/internet")
+            span_text = page.text_content("span.QuotaDetail__style__t1")
+            trimmed_text = span_text.split()[0]
+            # print(float(trimmed_text))
+            with open(
+                "/Users/yusufkarback/ambis/selenium_basic/new_akun_twt.txt", "a"
+            ) as file:
+                file.write(f"{chrome_profile},{client},{password}\n")
+            sukses = True
+            # print("sukses true")
+            browser.close()
 
 data = {
-    "client": client,
-    "company": company,
-    "team_flag": team_flag,
-    "number": number,
     "quota": float(trimmed_text),
     "chrome_profile": chrome_profile,
     "profile_path": profile_dir,
