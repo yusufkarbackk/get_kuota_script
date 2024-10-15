@@ -1,9 +1,9 @@
 import requests
 
 
-def update_kuota_request(nomor, quota):
-    url = "http://localhost:8080/automation"
-    data = {"nomor": nomor, "quota": quota, "user": "system"}
+def update_kuota_request(username, quota):
+    url = "http://172.31.254.55:8080/automation"
+    data = {"username": username, "quota": quota, "user": "system"}
 
     response = requests.patch(url, json=data)
 

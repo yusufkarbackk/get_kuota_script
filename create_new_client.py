@@ -3,26 +3,30 @@ import os
 from playwright.sync_api import sync_playwright
 import sys
 
-client = sys.argv[1]
+
+site = sys.argv[1]
 password = sys.argv[2]
-number = sys.argv[3]
-# chrome_profile = sys.argv[4]
-company = sys.argv[4]
-team_flag = sys.argv[5]
+company = sys.argv[3]
+username = sys.argv[4]
+# with open(
+#                 "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
+#             ) as file:
+#                 file.write(f"{site},{password},{company}, {username}\n")
+TrimedSite = site.strip("'")
+trimedPassword = password.strip("'")
+trimedCompany = company.strip("'")
+trimedUsername = username.strip("'")
 
-# client = "sxtstock1"
-# password = "batiku232"
-# number = "081119026097"
-# # chrome_profile = "52"
-# company = "sxtstock1"
-# team_flag = "bati"
+# TrimedSite = "jyskcileungsi"
+# trimedPassword = "batiku232"
+# trimedCompany = "Bati"
+# trimedUsername = "jyskcileungsi01"
 
-profile_dir = (
-    f"/Users/yusufkarback/Library/Application Support/Google/Chrome/profile-{client}"
-)
-chrome_profile = f"profile-{client}"
+profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{TrimedSite}"
+
+chrome_profile = f"profile-{TrimedSite}"
 # Check if the directory exists, if not, create it
-remove_popup = 1
+
 if not os.path.exists(profile_dir):
     # print("create new profile")
     os.makedirs(profile_dir)
@@ -32,9 +36,10 @@ while sukses == False:
     with sync_playwright() as p:
         browser = p.chromium.launch_persistent_context(
             headless=False,
-            executable_path="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            executable_path="C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
             user_data_dir=profile_dir,
             args=["--disable-notifications"],
+            slow_mo=1500
         )
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
@@ -46,10 +51,10 @@ while sukses == False:
             span_text = page.text_content("span.QuotaDetail__style__t1")
             trimmed_text = span_text.split()[0]
             # print(float(trimmed_text))
-            with open(
-                "/Users/yusufkarback/ambis/selenium_basic/new_akun_twt.txt", "a"
-            ) as file:
-                file.write(f"{chrome_profile},{client},{password}\n")
+            # with open(
+            #     "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
+            # ) as file:
+            #     file.write(f"{chrome_profile},{trimedUsername},{trimedPassword}\n")
             sukses = True
             # print("sukses true")
             browser.close()
@@ -61,35 +66,37 @@ while sukses == False:
 
             page.click('text="Lanjutkan di Web"')
             page.click('text="Masuk dengan metode lain"')
-            # page.click('text="Lanjutkan di Web"')
             page.click('text="Masuk Dengan Twitter"')
 
             page.click("#allow")
             page.click("#allow")
-            # page.locator("span:has-text('Sign in to X')").wait_for()
 
-            # print("masukin usernae")
-            page.locator('input[name="text"]').fill(client)
+            page.locator('input[name="text"]').fill(trimedUsername)
             page.click('text="Next"')
-            page.locator('input[name="password"]').fill(password)
+            page.locator('input[name="password"]').fill(trimedPassword)
             page.click('text="Log in"')
 
-            page.wait_for_selector("div.HeaderNavigationV2__style__profile")
+            page.wait_for_load_state("networkidle")
+            page.wait_for_selector("div.HeaderNavigationV2__style__profile", state='visible', timeout=300000)
+            phoneNumber = page.text_content("span.StatusInfo__style__number")
+            trimmedPhoneNumber = phoneNumber.replace(" ", "")
 
             page.goto("https://my.telkomsel.com/detail-quota/internet")
-            span_text = page.text_content("span.QuotaDetail__style__t1")
-            trimmed_text = span_text.split()[0]
-            # print(float(trimmed_text))
+            quota = page.text_content("span.QuotaDetail__style__t1")
+            trimmed_quota = quota.split()[0]
+            # print(trimmed_quota)
+            # print(trimmedPhoneNumber)
             with open(
-                "/Users/yusufkarback/ambis/selenium_basic/new_akun_twt.txt", "a"
+                "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
             ) as file:
-                file.write(f"{chrome_profile},{client},{password}\n")
+                file.write(f"{chrome_profile},{trimedUsername},{trimedPassword}\n")
             sukses = True
-            # print("sukses true")
+            #print("sukses true")
             browser.close()
 
 data = {
-    "quota": float(trimmed_text),
+    "quota": float(trimmed_quota),
+    "phoneNumber":trimmedPhoneNumber,
     "chrome_profile": chrome_profile,
     "profile_path": profile_dir,
 }
