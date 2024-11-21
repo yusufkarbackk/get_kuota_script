@@ -4,14 +4,10 @@ from playwright.sync_api import sync_playwright
 import sys
 import datetime
 
-site = sys.argv[1]
+username = sys.argv[1]
 password = sys.argv[2]
-company = sys.argv[3]
-username = sys.argv[4]
 
-TrimedSite = site.strip("'")
 trimedPassword = password.strip("'")
-trimedCompany = company.strip("'")
 trimedUsername = username.strip("'")
 
 # TrimedSite = "dimaserang"
@@ -19,9 +15,9 @@ trimedUsername = username.strip("'")
 # trimedCompany = "Bati"
 # trimedUsername = "dimaserang"
 
-profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{TrimedSite}"
+profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
-chrome_profile = f"profile-{TrimedSite}"
+chrome_profile = f"profile-{trimedUsername}"
 # Check if the directory exists, if not, create it
 if not os.path.exists(profile_dir):
     os.makedirs(profile_dir)
@@ -79,20 +75,17 @@ with sync_playwright() as p:
 
                 page.wait_for_load_state("networkidle")
                 page.wait_for_selector("div.HeaderNavigationV2__style__profile", state='visible', timeout=300000)
-                # phoneNumber = page.text_content("span.StatusInfo__style__number")
-                # trimmedPhoneNumber = phoneNumber.replace(" ", "")
 
                 page.goto("https://my.telkomsel.com/detail-quota/internet")
                 quota = page.text_content("span.QuotaDetail__style__t1")
                 trimmed_quota = quota.split()[0]
-                # print(trimmed_quota)
-                # print(trimmedPhoneNumber)
+              
                 with open(
                     "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
                 ) as file:
                     file.write(f"""{chrome_profile},{trimedUsername},{trimedPassword}\n""")
                 sukses = True
-                #print("sukses true")
+
                 browser.close()
                 data = {
                     "quota": float(trimmed_quota),
@@ -105,9 +98,9 @@ with sync_playwright() as p:
             page.close()
             browser.close()
             with open(
-                        "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
+                    "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
-                file.write(f"CSV create client {datetime.datetime.now()} {TrimedSite} error: {e}\n")
+                file.write(f"create client {datetime.datetime.now()} {trimedUsername} error: {e}\n")
         
 
 
