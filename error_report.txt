@@ -1,121 +1,110 @@
-' @dimapekan'
-' @dimapekan'
-update client 2024-11-21 14:09:19.133267 ' error: Locator.fill: Timeout 30000ms exceeded.
-Call log:
-waiting for locator("input[name=\"password\"]")
-
-' @benzindonesia1'
- @dimapekan  batiku232
-update client 2024-11-21 14:20:13.372036  @dimapekan error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("span.QuotaDetail__style__t1") to be visible
-
- @benzindonesia1  batiku232
- @dimapekan  batiku232
-update client 2024-11-21 14:29:26.096990  @dimapekan error: Page.click: Timeout 30000ms exceeded.
-Call log:
-waiting for locator("#allow")
-
- @benzindonesia1  batiku232
- @KKutabumi  batiku232
-update client 2024-11-21 14:38:32.494029  @KKutabumi error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- DimaSurabaya  batiku232
-update client 2024-11-21 14:45:53.028742  DimaSurabaya error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- @edmmedan  batiku232
-update client 2024-11-21 14:53:18.103628  @edmmedan error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- @nyaibati6  batiku232
- @dimapekan  batiku232
- @KKutabumi  batiku232
- DimaSurabaya  batiku232
- @edmmedan  batiku232
- @nyaibati6  batiku232
- jyskcileungsi01  batiku232
-update client 2024-11-21 15:17:55.609582  jyskcileungsi01 error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- @jysk21  batiku232
-update client 2024-11-21 15:25:20.764904  @jysk21 error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- @pluit_jysk  batiku232
  jyskcileungsi01  batiku232
  @jysk21  batiku232
- @pluit_jysk  batiku232
- @AnisaPamulang  batiku232
-update client 2024-11-21 15:41:24.255812  @AnisaPamulang error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- @balaraj69378544  batiku232
-update client 2024-11-21 15:48:48.615784  @balaraj69378544 error: Page.wait_for_selector: Timeout 300000ms exceeded.
-Call log:
-waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
-
- bintarakres  batiku232
- @AnisaPamulang  batiku232
- @balaraj69378544  batiku232
- bintarakres  batiku232
- DimaHerritage  batiku232
- @new_kresna  batiku232
- @kresna_gondrong  batiku232
- @jurumudi_kresna  batiku232
- @sangian77204380  batiku232
- @KresnaSelapaja1  batiku232
- @LuthanAkong  batiku232
- @AnisaPamulang  batiku232
- bintarakres  batiku232
- DimaHerritage  batiku232
- @new_kresna  batiku232
- @jurumudi_kresna  batiku232
- @sangian77204380  batiku232
- @AnisaPamulang  batiku232
- bintarakres  batiku232
- DimaHerritage  batiku232
- @new_kresna  batiku232
- @sangian77204380  batiku232
-update client 2024-11-21 16:24:17.663986  @sangian77204380 error: Page.click: Timeout 30000ms exceeded.
-Call log:
-waiting for locator("#allow")
-
- @KresnaSelapaja1  batiku232
- @LuthanAkong  batiku232
-update client 2024-11-21 16:26:25.887345  @LuthanAkong error: Timeout 30000ms exceeded.
- @maspicibitung  batiku232
  @Empatkomatsu  batiku232
  @Komatsuaf5  batiku232
  @Enamkomatsu  batiku232
- cilemocca  batiku232
- @MoradiFatmawati  batiku232
- @sangian77204380  batiku232
- @LuthanAkong  batiku232
- @maspicibitung  batiku232
-update client 2024-11-21 16:48:29.185880  @maspicibitung error: Page.click: Timeout 30000ms exceeded.
-Call log:
-waiting for locator("#allow")
-
- @Komatsuaf5  batiku232
-update client 2024-11-21 16:50:57.997040  @Komatsuaf5 error: Page.click: Timeout 30000ms exceeded.
-Call log:
-waiting for locator("#allow")
-
- cilemocca  batiku232
-update client 2024-11-21 16:53:26.347292  cilemocca error: Page.click: Timeout 30000ms exceeded.
-Call log:
-waiting for locator("#allow")
-
  @MoradiFatmawati  batiku232
  @ascopriuk  batiku232
  @banyuwasco  batiku232
  @MajuCilegon  batiku232
- @LuthanAkong  batiku232
+ @MarundaKino  batiku232
+ @AritaSamarinda  batiku232
+ @sxtstock1  batiku232
+ @BogorDima  batiku232
+ @dimaserang  batiku232
+ @BalikpapanArita  batiku232
+ sumutsmart4  batiku232
+ @sumsel19  batiku232
+ @sumsel124  batiku232
+update client 2024-11-25 09:25:58.319830  @sumsel124 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+ @AritaSelor  batiku232
+ @KalbarSswe  batiku232
+ @Nos081119190558  batiku232
+ @nos081119190583  batiku232
+ @jypolink2  batiku232
+ @IdlaIndragiri  batiku232
+ @CegerKresna  batiku232
+ @AritaPalembang  batiku232
+ @AritaBanjarmas1  batiku232
+ @ascodw  batiku232
+ kndesxt32420  batiku232
+ srkesxt83981  batiku232
+ ssmmsxt8911  batiku232
+ jyskcileungsi01  batiku232
+create client 2024-11-25 13:57:00.008474 jyskcileungsi01 error: Locator.is_visible: Error: strict mode violation: locator(".QuotaDetail__style__t1") resolved to 7 elements:
+    1) <span class="QuotaDetail__style__t1">25.24 GB</span> aka get_by_text("25.24 GB")
+    2) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(2)
+    3) <span class="QuotaDetail__style__t1">1.24 GB  /15 GB</span> aka get_by_text("GB /15 GB")
+    4) <span class="QuotaDetail__style__t1">Internet Promo</span> aka get_by_text("Internet Promo")
+    5) <span class="QuotaDetail__style__t1">16 GB  /16 GB</span> aka get_by_text("GB /16 GB")
+    6) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(4)
+    7) <span class="QuotaDetail__style__t1">8 GB  /8 GB</span> aka get_by_text("GB /8 GB")
+
+Call log:
+  checking visibility of locator(".QuotaDetail__style__t1")
+
+create client 2024-11-25 14:00:48.595056 @jysk21 error: could not convert string to float: 'Gagal'
+create client 2024-11-25 14:08:25.451764 jyskcileungsi01 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+create client 2024-11-25 14:13:45.214882 jyskcileungsi01 error: Locator.is_visible: Error: strict mode violation: locator(".QuotaDetail__style__t1") resolved to 7 elements:
+    1) <span class="QuotaDetail__style__t1">25.24 GB</span> aka get_by_text("25.24 GB")
+    2) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(2)
+    3) <span class="QuotaDetail__style__t1">1.24 GB  /15 GB</span> aka get_by_text("GB /15 GB")
+    4) <span class="QuotaDetail__style__t1">Internet Promo</span> aka get_by_text("Internet Promo")
+    5) <span class="QuotaDetail__style__t1">16 GB  /16 GB</span> aka get_by_text("GB /16 GB")
+    6) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(4)
+    7) <span class="QuotaDetail__style__t1">8 GB  /8 GB</span> aka get_by_text("GB /8 GB")
+
+Call log:
+  checking visibility of locator(".QuotaDetail__style__t1")
+
+create client 2024-11-25 14:19:17.774892 jyskcileungsi01 error: Locator.is_visible: Error: strict mode violation: locator(".QuotaDetail__style__t1") resolved to 7 elements:
+    1) <span class="QuotaDetail__style__t1">25.24 GB</span> aka get_by_text("25.24 GB")
+    2) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(2)
+    3) <span class="QuotaDetail__style__t1">1.24 GB  /15 GB</span> aka get_by_text("GB /15 GB")
+    4) <span class="QuotaDetail__style__t1">Internet Promo</span> aka get_by_text("Internet Promo")
+    5) <span class="QuotaDetail__style__t1">16 GB  /16 GB</span> aka get_by_text("GB /16 GB")
+    6) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(4)
+    7) <span class="QuotaDetail__style__t1">8 GB  /8 GB</span> aka get_by_text("GB /8 GB")
+
+Call log:
+  checking visibility of locator(".QuotaDetail__style__t1")
+
+create client 2024-11-25 14:33:01.763860 jyskcileungsi01 error: Locator.is_visible: Error: strict mode violation: locator(".QuotaDetail__style__t1") resolved to 7 elements:
+    1) <span class="QuotaDetail__style__t1">25.24 GB</span> aka get_by_text("25.24 GB")
+    2) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(2)
+    3) <span class="QuotaDetail__style__t1">1.24 GB  /15 GB</span> aka get_by_text("GB /15 GB")
+    4) <span class="QuotaDetail__style__t1">Internet Promo</span> aka get_by_text("Internet Promo")
+    5) <span class="QuotaDetail__style__t1">16 GB  /16 GB</span> aka get_by_text("GB /16 GB")
+    6) <span class="QuotaDetail__style__t1">Internet</span> aka get_by_text("Internet").nth(4)
+    7) <span class="QuotaDetail__style__t1">8 GB  /8 GB</span> aka get_by_text("GB /8 GB")
+
+Call log:
+  checking visibility of locator(".QuotaDetail__style__t1")
+
+create client 2024-11-25 15:11:01.347225 @sumsel124 error: could not convert string to float: 'Gagal'
+create client 2024-11-25 15:16:47.843560 @Nos081119190558 error: could not convert string to float: 'Gagal'
+create client 2024-11-25 15:44:52.232754 utnes error: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
+
+create client 2024-11-25 15:46:51.210577 @sbsekalbar error: could not convert string to float: 'Gagal'
+create client 2024-11-25 16:27:59.876066 @sumsel124 error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+create client 2024-11-25 16:32:32.731000 @sumsel124 error: could not convert string to float: 'Gagal'
+create client 2024-11-25 16:53:59.501692 @sumsel124 error: could not convert string to float: 'Gagal'
+create client 2024-11-25 17:00:16.385165 @Nos081119190558 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+create client 2024-11-25 17:02:23.137319 @sumsel124 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+

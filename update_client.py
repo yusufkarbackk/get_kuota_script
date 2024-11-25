@@ -31,14 +31,14 @@ with sync_playwright() as p:
             headless=False,
             executable_path="C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
             user_data_dir=f"{profile_dir}",
-            args=["--disable-notifications"],
+            args=["--disable-notifications", "--disable-logging"],
             slow_mo=5000
         )
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
         page.wait_for_load_state("networkidle")
         
-        gagal_muat_data_element = page.locator(".QuotaDetail__style__t1")
+        gagal_muat_data_element = page.locator(".QuotaDetail__style__t1").first
         account_safe_element = page.locator("text='Help us keep your account safe.'")
         gagal_masuk_dengan_akun_sosial = page.locator("div.DialogSocialLoginError__style__title", has_text="Gagal Masuk dengan Akun Sosial")
         authorize_mytelkomsel_element = page.locator("h2", has_text="Authorize MyTelkomsel App to access your account?")
@@ -47,7 +47,7 @@ with sync_playwright() as p:
         try:
             if profile_div.is_visible(): #logged in
                 page.goto("https://my.telkomsel.com/detail-quota/internet")
-                span_text = page.text_content("span.QuotaDetail__style__t1")
+                span_text = page.text_content("span.QuotaDetail__style__t1").first
                 trimmed_text = span_text.split()[0]
                 page.close()
                 browser.close()
@@ -72,7 +72,7 @@ with sync_playwright() as p:
                     page.goto("https://my.telkomsel.com/detail-quota/internet")
                     page.wait_for_load_state("networkidle")
 
-                    quota = page.text_content("span.QuotaDetail__style__t1")
+                    quota = page.text_content("span.QuotaDetail__style__t1").first
                     trimmed_quota = quota.split()[0]
 
                     page.close()
@@ -137,7 +137,7 @@ with sync_playwright() as p:
                         page.goto("https://my.telkomsel.com/detail-quota/internet")
                         page.wait_for_load_state("networkidle")
 
-                        try:
+                        try:    
                             if gagal_muat_data_element.is_visible():
                                 data = {
                                 "status" : "failed",
@@ -149,8 +149,8 @@ with sync_playwright() as p:
                                 browser.close() 
                         except:
                             page.wait_for_load_state("networkidle")
-
-                            quota = page.text_content("span.QuotaDetail__style__t1")
+                            page.wait_for_selector("span.QuotaDetail__style__t1", state='visible', timeout=30000)
+                            quota = page.text_content("span.QuotaDetail__style__t1").first()
                             trimmed_quota = quota.split()[0]
                         
                             page.close()

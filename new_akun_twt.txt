@@ -364,3 +364,114 @@ profile-@sbsekalbar,@sbsekalbar,batiku232
 @ArithaGlodok,batiku232
 @ArithaGlodok,batiku232
  jyskcileungsi01, batiku232
+[
+    {
+        ,id: 38,
+        username: @KramatPezzo,
+        password: batiku232,
+        status: in
+ jyskcileungsi01, batiku232
+ @jysk21, batiku232
+ @Empatkomatsu, batiku232
+ jyskcileungsi01, batiku232
+ @jysk21, batiku232
+ @Empatkomatsu, batiku232
+ @Komatsuaf5, batiku232
+ @Enamkomatsu, batiku232
+ @MoradiFatmawati, batiku232
+ @MajuCilegon, batiku232
+ @MarundaKino, batiku232
+ @AritaSamarinda, batiku232
+ @BogorDima, batiku232
+ @dimaserang, batiku232
+ @BalikpapanArita, batiku232
+ sumutsmart4, batiku232
+ @sumsel19, batiku232
+ @sumsel124, batiku232
+ @AritaSelor, batiku232
+ @KalbarSswe, batiku232
+ @Nos081119190558, batiku232
+ @nos081119190583, batiku232
+ @jypolink2, batiku232
+ @IdlaIndragiri, batiku232
+ @CegerKresna, batiku232
+ @AritaKarawang, batiku232
+profile-@AritaKarawang,@AritaKarawang,batiku232
+ @AritaPalembang, batiku232
+ @AritaBanjarmas1, batiku232
+ @ascodw, batiku232
+ kndesxt32420, batiku232
+ srkesxt83981, batiku232
+ ssmmsxt8911, batiku232
+ ssmesxt27935, batiku232
+ utnes, batiku232
+@sbsekalbar,batiku232
+@Kalsel2Sxt3,batiku232
+@ArithaGlodok,batiku232
+ jyskcileungsi01, batiku232
+ @jysk21, batiku232
+ @Empatkomatsu, batiku232
+ @Komatsuaf5, batiku232
+ @Enamkomatsu, batiku232
+ @MoradiFatmawati, batiku232
+ @MajuCilegon, batiku232
+ @MarundaKino, batiku232
+ @AritaSamarinda, batiku232
+ @BogorDima, batiku232
+ @dimaserang, batiku232
+ @BalikpapanArita, batiku232
+ sumutsmart4, batiku232
+ @sumsel19, batiku232
+ @sumsel124, batiku232
+ @AritaSelor, batiku232
+ @KalbarSswe, batiku232
+ @Nos081119190558, batiku232
+ @nos081119190583, batiku232
+ @jypolink2, batiku232
+ @IdlaIndragiri, batiku232
+ @CegerKresna, batiku232
+ @AritaPalembang, batiku232
+ @AritaBanjarmas1, batiku232
+ @ascodw, batiku232
+ kndesxt32420, batiku232
+ srkesxt83981, batiku232
+ ssmmsxt8911, batiku232
+ ssmesxt27935, batiku232
+ utnes, batiku232
+@sbsekalbar,batiku232
+@Kalsel2Sxt3,batiku232
+@ArithaGlodok,batiku232
+ jyskcileungsi01, batiku232
+profile-@jysk21,@jysk21,batiku232
+profile-jyskcileungsi01,jyskcileungsi01,batiku232
+profile-@jysk21,@jysk21,batiku232
+profile-@Empatkomatsu,@Empatkomatsu,batiku232
+profile-@Komatsuaf5,@Komatsuaf5,batiku232
+profile-@Enamkomatsu,@Enamkomatsu,batiku232
+profile-@MoradiFatmawati,@MoradiFatmawati,batiku232
+profile-@MajuCilegon,@MajuCilegon,batiku232
+profile-@MarundaKino,@MarundaKino,batiku232
+profile-@AritaSamarinda,@AritaSamarinda,batiku232
+profile-@BogorDima,@BogorDima,batiku232
+profile-@dimaserang,@dimaserang,batiku232
+profile-sumutsmart4,sumutsmart4,batiku232
+profile-@sumsel19,@sumsel19,batiku232
+profile-@sumsel124,@sumsel124,batiku232
+profile-@AritaSelor,@AritaSelor,batiku232
+profile-@KalbarSswe,@KalbarSswe,batiku232
+profile-@Nos081119190558,@Nos081119190558,batiku232
+profile-@nos081119190583,@nos081119190583,batiku232
+profile-@jypolink2,@jypolink2,batiku232
+profile-@IdlaIndragiri,@IdlaIndragiri,batiku232
+profile-@CegerKresna,@CegerKresna,batiku232
+profile-@AritaPalembang,@AritaPalembang,batiku232
+profile-@AritaBanjarmas1,@AritaBanjarmas1,batiku232
+profile-@ascodw,@ascodw,batiku232
+profile-kndesxt32420,kndesxt32420,batiku232
+profile-srkesxt83981,srkesxt83981,batiku232
+profile-ssmmsxt8911,ssmmsxt8911,batiku232
+profile-ssmesxt27935,ssmesxt27935,batiku232
+profile-@sbsekalbar,@sbsekalbar,batiku232
+profile-@Kalsel2Sxt3,@Kalsel2Sxt3,batiku232
+profile-@sumsel124,@sumsel124,batiku232
+profile-@sumsel124,@sumsel124,batiku232

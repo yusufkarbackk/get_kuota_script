@@ -3,6 +3,7 @@ import os
 from playwright.sync_api import sync_playwright
 import sys
 import datetime
+from remove_folders import remove_folders
 
 username = sys.argv[1]
 password = sys.argv[2]
@@ -15,10 +16,6 @@ trimedUsername = username.replace(" ", "")
 
 # trimedPassword = "batiku232"
 # trimedUsername = "@new_kresna"
-with open(
-    "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
-) as file:
-    file.write(f"""{username},{password}\n""")
 profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
 chrome_profile = f"profile-{trimedUsername}"
@@ -31,14 +28,14 @@ with sync_playwright() as p:
             headless=False,
             executable_path="C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
             user_data_dir=profile_dir,
-            args=["--disable-notifications"],
+            args=["--disable-notifications", "--disable-logging"],
             slow_mo=5000
         )
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
         
         page.wait_for_load_state("networkidle")
-        gagal_muat_data_element = page.locator(".QuotaDetail__style__t1")
+        gagal_muat_data_element = page.locator("span.QuotaDetail__style__t1", has_text="Gagal Memuat Data").first
         account_safe_element = page.locator("text='Help us keep your account safe.'")
         gagal_masuk_dengan_akun_sosial = page.locator("div.DialogSocialLoginError__style__title", has_text="Gagal Masuk dengan Akun Sosial")
         authorize_mytelkomsel_element = page.locator("h2", has_text="Authorize MyTelkomsel App to access your account?")
@@ -77,6 +74,7 @@ with sync_playwright() as p:
                     sys.stdout.flush()
                     page.close()
                     browser.close()
+                    remove_folders(profile_dir)
                 elif gagal_muat_data_element.is_visible():
                     data = {
                         "status" : "failed",
@@ -86,6 +84,7 @@ with sync_playwright() as p:
                     sys.stdout.flush()
                     page.close()
                     browser.close()
+                    remove_folders(profile_dir)
                 elif authorize_mytelkomsel_element.is_visible():
                     data = {
                         "status" : "failed",
@@ -95,10 +94,10 @@ with sync_playwright() as p:
                     sys.stdout.flush()
                     page.close()
                     browser.close()
+                    remove_folders(profile_dir)
                 else:
                     page.wait_for_load_state("networkidle")
                     page.wait_for_selector("div.HeaderNavigationV2__style__profile", state='visible', timeout=300000)
-
                     page.goto("https://my.telkomsel.com/detail-quota/internet")
                     if gagal_muat_data_element.is_visible():
                         data = {
@@ -109,26 +108,27 @@ with sync_playwright() as p:
                         sys.stdout.flush()
                         page.close()
                         browser.close()
+                        remove_folders(profile_dir)
                     else:
                         quota = page.text_content("span.QuotaDetail__style__t1")
                         trimmed_quota = quota.split()[0]
-                    
+                        
                         with open(
-                            "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
+                                "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
                         ) as file:
-                            file.write(f"""{chrome_profile},{trimedUsername},{trimedPassword}\n""")
-                        sukses = True
+                                file.write(f"""{chrome_profile},{trimedUsername},{trimedPassword}\n""")
 
-                        browser.close()
                         data = {
-                            "status" : "success",
-                            "quota": float(trimmed_quota),
-                            "chrome_profile": chrome_profile,
-                            "profile_path": profile_dir,
+                                "status" : "success",
+                                "quota": float(trimmed_quota),
+                                "chrome_profile": chrome_profile,
+                                "profile_path": profile_dir,
                         }
                         print(json.dumps(data))
                         sys.stdout.flush()
-                
+                        page.close()
+                        browser.close()
+                        remove_folders(profile_dir)
         except Exception as e:
                 data = {
                 "status" : "failed",
