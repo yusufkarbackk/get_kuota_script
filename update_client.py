@@ -5,6 +5,8 @@ import sys
 import datetime
 import time
 
+from remove_folders import remove_folders
+
 username = sys.argv[1]
 password = sys.argv[2]
 
@@ -13,11 +15,6 @@ password = sys.argv[2]
 
 trimedPassword = password.replace(" ", "")
 trimedUsername = username.replace(" ", "")
-
-with open(
-        "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
-    ) as file:
-    file.write(f"{username} {password}\n")
 
 profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
@@ -38,7 +35,7 @@ with sync_playwright() as p:
         page.goto("https://my.telkomsel.com/login/web")
         page.wait_for_load_state("networkidle")
         
-        gagal_muat_data_element = page.locator(".QuotaDetail__style__t1").first
+        gagal_muat_data_element = page.locator(".QuotaDetail__style__t1", has_text="Gagal Memuat Data")
         account_safe_element = page.locator("text='Help us keep your account safe.'")
         gagal_masuk_dengan_akun_sosial = page.locator("div.DialogSocialLoginError__style__title", has_text="Gagal Masuk dengan Akun Sosial")
         authorize_mytelkomsel_element = page.locator("h2", has_text="Authorize MyTelkomsel App to access your account?")
@@ -47,16 +44,20 @@ with sync_playwright() as p:
         try:
             if profile_div.is_visible(): #logged in
                 page.goto("https://my.telkomsel.com/detail-quota/internet")
-                span_text = page.text_content("span.QuotaDetail__style__t1").first
+                span_text = page.text_content("span.QuotaDetail__style__t1")
                 trimmed_text = span_text.split()[0]
+                
+                data = {
+                    "status" : "success",
+                    "quota" : float(trimmed_text)
+                }
+                
+                print(json.dumps(data))
+                #sys.stdout.flush()   
                 page.close()
                 browser.close()
-                data = {
-                    'status' : 'success',
-                    'quota' : float(trimmed_text)
-                }
-                print(json.dumps(data))
-                sys.stdout.flush()   
+                 
+                remove_folders(profile_dir)
             else:
                 page.click("div.DialogInstallPWADesktop__style__closeIcon") 
 
@@ -72,19 +73,18 @@ with sync_playwright() as p:
                     page.goto("https://my.telkomsel.com/detail-quota/internet")
                     page.wait_for_load_state("networkidle")
 
-                    quota = page.text_content("span.QuotaDetail__style__t1").first
+                    quota = page.text_content("span.QuotaDetail__style__t1", )
                     trimmed_quota = quota.split()[0]
-
-                    page.close()
-                    browser.close()
                     
                     data = {
-                        'status' : 'success',
-                        'quota' : float(trimmed_quota)
+                        "status" : "success",
+                        "quota" : float(trimmed_quota)
                     }
                     print(json.dumps(data))
-                    sys.stdout.flush()   
-
+                    #sys.stdout.flush()   
+                    page.close()
+                    browser.close()
+                    remove_folders(profile_dir)
                 except:
                     page.click('text="Masuk dengan metode lain"')
                     page.click('text="Masuk Dengan Twitter"')
@@ -109,30 +109,23 @@ with sync_playwright() as p:
                         }
                         
                         print(json.dumps(data))
-                        sys.stdout.flush()
+                        #sys.stdout.flush()
                         page.close()
                         browser.close()
-                    elif gagal_muat_data_element.is_visible():
-                        data = {
-                            "status" : "failed",
-                            "message" : "Halaman Gagal Memuat Data"
-                        }
-                        print(json.dumps(data))
-                        sys.stdout.flush()
-                        page.close()
-                        browser.close()
+                        remove_folders(profile_dir)
                     elif authorize_mytelkomsel_element.is_visible():
                         data = {
                             "status" : "failed",
                             "message" : "error authorize mytelkomsel app"
                         }
                         print(json.dumps(data))
-                        sys.stdout.flush()
+                        #sys.stdout.flush()
                         page.close()
                         browser.close()
+                        remove_folders(profile_dir)
                     else:
                         page.wait_for_load_state("networkidle")
-                        # page.wait_for_selector("div.HeaderNavigationV2__style__profile", state='visible', timeout=300000)
+                        page.wait_for_selector("div.HeaderNavigationV2__style__profile", state='visible', timeout=300000)
 
                         page.goto("https://my.telkomsel.com/detail-quota/internet")
                         page.wait_for_load_state("networkidle")
@@ -147,33 +140,36 @@ with sync_playwright() as p:
                                 sys.stdout.flush()
                                 page.close()
                                 browser.close() 
+                                remove_folders(profile_dir)
                         except:
                             page.wait_for_load_state("networkidle")
                             page.wait_for_selector("span.QuotaDetail__style__t1", state='visible', timeout=30000)
-                            quota = page.text_content("span.QuotaDetail__style__t1").first()
+                            quota = page.text_content("span.QuotaDetail__style__t1")
                             trimmed_quota = quota.split()[0]
                         
                             page.close()
                             browser.close()
                             
                             data = {
-                                'status' : 'success',
-                                'quota' : float(trimmed_quota)
+                                "status" : "success"   ,
+                                "quota" : float(trimmed_quota)
                             }
                             print(json.dumps(data))
-                            sys.stdout.flush()
+                            #sys.stdout.flush()
                             page.close()
                             browser.close()
-                    
+                            remove_folders(profile_dir)
         except Exception as e:
             data = {
                 "status" : "failed",
                 "message" : f"{e}"
                 }
             print(json.dumps(data))
-            sys.stdout.flush()
+            #sys.stdout.flush()
             page.close()
             browser.close()
+            remove_folders(profile_dir)
+
             with open(
                     "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:

@@ -108,3 +108,131 @@ create client 2024-11-25 17:02:23.137319 @sumsel124 error: Page.click: Timeout 3
 Call log:
 waiting for locator("#allow")
 
+@KramatPezzo batiku232
+@kokasPezzo batiku232
+ @dimapekan  batiku232
+ @benzindonesia1  batiku232
+ @KKutabumi  batiku232
+ DimaSurabaya  batiku232
+ @edmmedan  batiku232
+ @nyaibati6  batiku232
+ jyskcileungsi01  batiku232
+ @jysk21  batiku232
+update client 2024-11-26 00:18:10.904382  @jysk21 error: 'str' object has no attribute 'first'
+ @pluit_jysk  batiku232
+ @AnisaPamulang  batiku232
+ @balaraj69378544  batiku232
+ bintarakres  batiku232
+ DimaHerritage  batiku232
+ @new_kresna  batiku232
+ @kresna_gondrong  batiku232
+ @jurumudi_kresna  batiku232
+ @sangian77204380  batiku232
+ @KresnaSelapaja1  batiku232
+ @LuthanAkong  batiku232
+ @maspicibitung  batiku232
+ @Empatkomatsu  batiku232
+update client 2024-11-26 00:44:16.631675  @Empatkomatsu error: 'str' object has no attribute 'first'
+ @Komatsuaf5  batiku232
+update client 2024-11-26 00:44:35.099128  @Komatsuaf5 error: 'str' object has no attribute 'first'
+ @Enamkomatsu  batiku232
+update client 2024-11-26 00:44:53.532575  @Enamkomatsu error: 'str' object has no attribute 'first'
+ cilemocca  batiku232
+ @MoradiFatmawati  batiku232
+update client 2024-11-26 00:47:20.004855  @MoradiFatmawati error: 'str' object has no attribute 'first'
+ @ascopriuk  batiku232
+ @banyuwasco  batiku232
+ @Kemendikbud1  batiku232
+ @MajuCilegon  batiku232
+update client 2024-11-26 00:54:00.106608  @MajuCilegon error: 'str' object has no attribute 'first'
+ @smart_sentul  batiku232
+ @MarundaKino  batiku232
+ @intecstech  batiku232
+ @AritaBatam  batiku232
+ @AritaSamarinda  batiku232
+update client 2024-11-26 01:01:29.476641  @AritaSamarinda error: 'str' object has no attribute 'first'
+ @AritaPekanbaru  batiku232
+ aritajambi3717  batiku232
+ @sxtstock1  batiku232
+ @BogorDima  batiku232
+update client 2024-11-26 01:08:12.509351  @BogorDima error: 'str' object has no attribute 'first'
+ @BekasiDima  batiku232
+ @dimaserang  batiku232
+update client 2024-11-26 01:10:38.248387  @dimaserang error: 'str' object has no attribute 'first'
+ @ArthaBalik  batiku232
+ sumutsmart4  batiku232
+update client 2024-11-26 01:13:05.063644  sumutsmart4 error: 'str' object has no attribute 'first'
+ @KuninganJysk  batiku232
+ @sumsel19  batiku232
+update client 2024-11-26 01:15:31.750939  @sumsel19 error: 'str' object has no attribute 'first'
+ @bkpekalsel  batiku232
+ @kalselsnke  batiku232
+ @KaltimSxt1  batiku232
+ @KaltimSxt8  batiku232
+ @Kalsel2S  batiku232
+ @Ksxt7  batiku232
+ @kaltimluay  batiku232
+ @Kalsel2Sxt4  batiku232
+ kalsel2sxt8  batiku232
+ @kalteng51  batiku232
+ @SkptSxt  batiku232
+ @jypopapua  batiku232
+ @KaltimRpne  batiku232
+ @BmhbTengah  batiku232
+ @KalbarSdse  batiku232
+ @SKetapang5  batiku232
+ @kaltimbsre2  batiku232
+ @sumutsmart2  batiku232
+update client 2024-11-26 01:54:16.176334  @sumutsmart2 error: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("input[name=\"text\"]")
+
+ @AritaSelor  batiku232
+update client 2024-11-26 01:54:33.174704  @AritaSelor error: 'str' object has no attribute 'first'
+ @KalbarSswe  batiku232
+update client 2024-11-26 01:54:51.051616  @KalbarSswe error: 'str' object has no attribute 'first'
+ @nos081119190583  batiku232
+update client 2024-11-26 01:55:08.806848  @nos081119190583 error: 'str' object has no attribute 'first'
+ @jypolink2  batiku232
+update client 2024-11-26 01:55:26.493710  @jypolink2 error: 'str' object has no attribute 'first'
+ @IdlaIndragiri  batiku232
+update client 2024-11-26 01:55:45.178368  @IdlaIndragiri error: 'str' object has no attribute 'first'
+ @CegerKresna  batiku232
+update client 2024-11-26 01:56:02.888667  @CegerKresna error: 'str' object has no attribute 'first'
+ @AritaKarawang  batiku232
+ @AritaPalembang  batiku232
+update client 2024-11-26 01:58:30.075008  @AritaPalembang error: 'str' object has no attribute 'first'
+ @AritaBanjarmas1  batiku232
+update client 2024-11-26 01:58:47.972845  @AritaBanjarmas1 error: 'str' object has no attribute 'first'
+ @ascodw  batiku232
+update client 2024-11-26 01:59:05.086453  @ascodw error: 'str' object has no attribute 'first'
+ kndesxt32420  batiku232
+update client 2024-11-26 01:59:22.619852  kndesxt32420 error: 'str' object has no attribute 'first'
+ srkesxt83981  batiku232
+update client 2024-11-26 01:59:39.921218  srkesxt83981 error: 'str' object has no attribute 'first'
+ ssmmsxt8911  batiku232
+update client 2024-11-26 01:59:58.356702  ssmmsxt8911 error: 'str' object has no attribute 'first'
+ ssmesxt27935  batiku232
+@BmhbTengah batiku232
+update client 2024-11-26 02:00:54.388855 @BmhbTengah error: 'str' object has no attribute 'first'
+@Kalsel2Sxt3 batiku232
+update client 2024-11-26 02:01:11.582730 @Kalsel2Sxt3 error: 'str' object has no attribute 'first'
+@KramatPezzo batiku232
+@kokasPezzo batiku232
+update client 2024-11-26 08:51:38.088811 @kokasPezzo error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+ @dimapekan  batiku232
+ @benzindonesia1  batiku232
+@KramatPezzo batiku232
+@kokasPezzo batiku232
+@KramatPezzo batiku232
+@kokasPezzo batiku232
+@KramatPezzo batiku232
+@kokasPezzo batiku232
+update client 2024-11-26 12:36:49.856669  @sumutsmart2 error: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
+
+update client 2024-11-26 13:58:03.916872  @Nos081119190558 error: could not convert string to float: 'Gagal'

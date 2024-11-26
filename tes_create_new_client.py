@@ -71,7 +71,7 @@ with sync_playwright() as p:
                     }
                     
                     print(json.dumps(data))
-                    sys.stdout.flush()
+                    sys.stdout.flush()  
                     page.close()
                     browser.close()
                     remove_folders(profile_dir)

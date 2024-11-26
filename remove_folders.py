@@ -19,10 +19,14 @@ def remove_folders(profile_path):
         if os.path.exists(folder_path):
             try:
                 shutil.rmtree(folder_path)  # Recursively delete the folder and its contents
-                print(f"Deleted: {folder_path}")
+                #print(f"Deleted: {folder_path}")
             except Exception as e:
-                print(f"Failed to delete {folder_path}: {e}")
+                with open(
+                "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
+                ) as file:
+                    file.write(f"{e}")
         else:
-            print(f"Folder not found: {folder_path}")
-
-    print("Cleanup complete.")
+            with open(
+                "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
+            ) as file:
+                file.write("folder not found")
