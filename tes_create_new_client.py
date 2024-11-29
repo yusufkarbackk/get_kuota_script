@@ -35,7 +35,7 @@ with sync_playwright() as p:
         page.goto("https://my.telkomsel.com/login/web")
         
         page.wait_for_load_state("networkidle")
-        gagal_muat_data_element = page.locator("span.QuotaDetail__style__t1", has_text="Gagal Memuat Data").first
+        gagal_muat_data_element = page.locator("span.QuotaDetail__style__t1", has_text="Gagal Memuat Data")
         account_safe_element = page.locator("text='Help us keep your account safe.'")
         gagal_masuk_dengan_akun_sosial = page.locator("div.DialogSocialLoginError__style__title", has_text="Gagal Masuk dengan Akun Sosial")
         authorize_mytelkomsel_element = page.locator("h2", has_text="Authorize MyTelkomsel App to access your account?")
@@ -129,6 +129,19 @@ with sync_playwright() as p:
                         page.close()
                         browser.close()
                         remove_folders(profile_dir)
+        except TimeoutError as e:
+            data = {
+                "status" : "failed",
+                "message" : "element not found"
+            }
+            print(json.dumps(data))
+            sys.stdout.flush()
+            page.close()
+            browser.close()
+            with open(
+                        "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
+            ) as file:
+                file.write(f"create client {datetime.datetime.now()} {trimedUsername} error: element not found \n")
         except Exception as e:
                 data = {
                 "status" : "failed",

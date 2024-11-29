@@ -236,3 +236,121 @@ Call log:
 waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
 
 update client 2024-11-26 13:58:03.916872  @Nos081119190558 error: could not convert string to float: 'Gagal'
+create client 2024-11-27 16:31:58.915593 @sumsel124 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+create client 2024-11-27 16:33:28.175814 @Nos081119190558 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+create client 2024-11-27 16:34:56.542726 @nos081119190583 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+create client 2024-11-27 16:42:02.187209 utnes error: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
+
+create client 2024-11-27 16:43:30.750514 @sbsekalbar error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
+create client 2024-11-27 16:45:49.858295 @ArithaGlodok error: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("input[name=\"text\"]")
+
+update client 2024-11-28 09:23:22.721036  @sumsel124 error: could not convert string to float: 'Gagal'
+update client 2024-11-28 09:24:14.850367  @Nos081119190558 error: could not convert string to float: 'Gagal'
+update client 2024-11-28 09:34:15.037238  utnes error: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+waiting for locator("div.HeaderNavigationV2__style__profile") to be visible
+
+update client 2024-11-28 09:34:43.548945 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 09:58:41.508048  @sumsel124 error: could not convert string to float: 'Gagal'
+update client 2024-11-28 15:18:17.098166 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 15:21:25.224268 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 15:26:25.114163 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 15:32:20.463647 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 15:47:10.885906 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 15:49:01.447575 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 16:00:18.841022 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 16:00:37.838317 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 16:02:01.414311 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-28 16:07:40.080623 @nyaibati6 error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-28 16:15:02.517423 cilemocca error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 00:03:24.377589 @nyaibati6 error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 00:09:11.355568 @Empatkomatsu error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 00:10:38.842331 cilemocca error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 08:03:17.566569 @nyaibati6 error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 08:08:56.586407 @Empatkomatsu error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 08:10:31.688182 cilemocca error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 10:07:50.377605 @Empatkomatsu error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.DialogInstallPWADesktop__style__closeIcon")
+
+update client 2024-11-29 10:50:37.947599 @Empatkomatsu error: Locator.text_content: Error: strict mode violation: locator("span.QuotaDetail__style__title") resolved to 6 elements:
+    1) <span class="QuotaDetail__style__title">Internet</span> aka get_by_role("button", name="quota_detail_tab_internet_text Internet")
+    2) <span class="QuotaDetail__style__title">Multimedia</span> aka get_by_role("button", name="quota_detail_tab_multimedia_text Multimedia")
+    3) <span class="QuotaDetail__style__title">Telepon</span> aka get_by_role("button", name="quota_detail_tab_voice_text")
+    4) <span class="QuotaDetail__style__title">SMS</span> aka get_by_role("button", name="quota_detail_tab_sms_text SMS")
+    5) <span class="QuotaDetail__style__title">Monetary</span> aka get_by_role("button", name="quota_detail_tab_monetary_text Monetary")
+    6) <span data-testid="noQuotaText" class="QuotaDetail__style__title">Anda tidak memiliki kuota</span> aka get_by_test_id("noQuotaText")
+
+Call log:
+waiting for locator("span.QuotaDetail__style__title")
+
+update client 2024-11-29 10:52:19.915255 @Empatkomatsu error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 11:17:29.210345 @Empatkomatsu error: Locator.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 15:20:12.718039 @Empatkomatsu error: Locator.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 15:35:12.584931 @Empatkomatsu error: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1") to be visible
+
+update client 2024-11-29 16:00:34.848097 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-29 16:00:54.505065 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-29 16:01:13.221537 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-29 16:01:31.659420 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-29 16:01:58.929034 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-29 16:02:26.631134 @sbsekalbar error: could not convert string to float: 'Gagal'
+update client 2024-11-29 16:21:34.442055 @KramatPezzo error: Locator.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__title").nth(5)
+
+update client 2024-11-29 16:36:12.570707 @KramatPezzo  error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("text=\"Masuk dengan metode lain\"")
+
