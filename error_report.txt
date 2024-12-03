@@ -354,3 +354,376 @@ update client 2024-11-29 16:36:12.570707 @KramatPezzo  error: Page.click: Timeou
 Call log:
 waiting for locator("text=\"Masuk dengan metode lain\"")
 
+update client 2024-11-29 17:47:53.456765 @nyaibati6 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.DialogInstallPWADesktop__style__closeIcon")
+
+update client 2024-11-29 18:04:18.832225 cilemocca error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.DialogInstallPWADesktop__style__closeIcon")
+
+update client 2024-11-29 18:36:47.109284 @BmhbTengah error: Page.text_content: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("span.QuotaDetail__style__t1")
+
+update client 2024-11-29 18:53:56.471019 @BmhbTengah error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("div.DialogInstallPWADesktop__style__closeIcon")
+
+update client 2024-11-30 08:15:33.034238 @balaraj69378544 error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+navigating to "https://my.telkomsel.com/detail-quota/internet", waiting until "load"
+
+update client 2024-11-30 16:09:55.001148 jyskcileungsi01 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:12:28.706061 @jysk21 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:26:46.756353 @Empatkomatsu error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:29:19.778146 @Komatsuaf5 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:31:52.485298 @Enamkomatsu error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:39:49.729890 @MajuCilegon error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:43:22.119966 @MarundaKino error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:47:47.059385 @AritaSamarinda error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:53:08.476141 @BogorDima error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 16:56:37.425150 @dimaserang error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:00:05.328909 sumutsmart4 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:03:42.386674 @sumsel19 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:23:23.955930 @AritaSelor error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:25:56.408612 @KalbarSswe error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:28:29.659092 @jypolink2 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:31:01.099857 @IdlaIndragiri error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:33:36.424729 @CegerKresna error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:37:04.038783 @AritaPalembang error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:39:36.091171 @AritaBanjarmas1 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:42:06.743550 @ascodw error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:44:36.016074 kndesxt32420 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:47:09.243114 srkesxt83981 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:49:43.181327 ssmmsxt8911 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:52:15.485365 ssmesxt27935 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-11-30 17:55:41.965848 @Kalsel2Sxt3 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 00:59:43.736975 @KalbarSswe error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:04:36.102031 @dimapekan error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:07:07.301749 @benzindonesia1 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:09:39.768355 @KKutabumi error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:12:10.074340 DimaSurabaya error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:14:43.759183 @edmmedan error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:17:32.347067 @nyaibati6 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:23:26.271093 @AnisaPamulang error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:25:52.382058 @balaraj69378544 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:28:24.024229 bintarakres error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:34:47.132299 @jurumudi_kresna error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:39:48.390167 @LuthanAkong error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:46:13.602261 cilemocca error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:49:35.187883 @ascopriuk error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:52:02.666786 @banyuwasco error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 08:58:45.786793 @intecstech error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 09:08:11.553377 @BekasiDima error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 09:11:36.244638 @ArthaBalik error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 09:14:54.811832 @KuninganJysk error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 09:34:47.464791 @BmhbTengah error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 09:38:32.777078 @SKetapang5 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 09:47:12.485349 @AritaKarawang error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 16:04:06.555797 @kokasPezzo error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 16:15:00.600256 @AnisaPamulang error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-01 17:03:11.892816 @sumutsmart2 error: Page.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("#allow")
+
+update client 2024-12-02 09:39:53.454323 @KramatPezzo error: BrowserContext.close: Target page, context or browser has been closed
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
+{'status': 'success', 'quota': 11.98, 'unit': 'GB'}
