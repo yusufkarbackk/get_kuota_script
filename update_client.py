@@ -77,6 +77,8 @@ with sync_playwright() as p:
                         unit = span_text.split()[1]
                         # quota = "{:.2f}".format(float(688.81) / 1024)
 
+                        # quota = "{:.2f}".format(float(688.81) / 1024)
+
                         if unit == "GB":
                             quota = float(trimmed_text)
                         elif unit == "MB":
@@ -87,6 +89,10 @@ with sync_playwright() as p:
                             "quota" : quota,
                             'unit' : unit
                         }
+                        with open(
+                            "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
+                        ) as file:
+                            file.write(f"{data}\n")
                         with open(
                             "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
                         ) as file:
@@ -224,12 +230,29 @@ with sync_playwright() as p:
                                 quota = float(trimmed_text)
                             elif unit == "MB":
                                 quota = "{:.2f}".format(float(trimmed_text) / 1024)
+                            span_text = page.text_content("span.QuotaDetail__style__t1")
+                            trimmed_text = span_text.split()[0]
+                            unit = span_text.split()[1]
+                            # quota = "{:.2f}".format(float(688.81) / 1024)
+
+                            if unit == "GB":
+                                quota = float(trimmed_text)
+                            elif unit == "MB":
+                                quota = "{:.2f}".format(float(trimmed_text) / 1024)
                             
                             data = {
                                 "status" : "success",
                                 "quota" : quota,
+                                'unit' : unit,
+                                "status" : "success",
+                                "quota" : quota,
                                 'unit' : unit
                             }
+                            with open(
+                                "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
+                            ) as file:
+                                file.write(f"{data}\n")
+                            
                             with open(
                                 "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
                             ) as file:
