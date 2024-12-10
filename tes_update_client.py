@@ -12,9 +12,9 @@ from remove_folders import remove_folders
 
 # trimedPassword = password.replace(" ", "")
 # trimedUsername = username.replace(" ", "")
-    
+
 trimedPassword = "batiku232"
-trimedUsername = "@IdlaIndragiri"
+trimedUsername = "@dimaserang"
 
 profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
@@ -31,6 +31,12 @@ with sync_playwright() as p:
             args=["--disable-notifications", "--disable-logging"],
             slow_mo=5000
         )
+        # for page in browser.pages:
+        #     if page.url == "about:blank":
+        #         print("Closing lingering 'about:blank' page")
+        #         page.close()
+        print(browser.pages)
+                
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
         page.wait_for_load_state("networkidle")
@@ -54,9 +60,7 @@ with sync_playwright() as p:
                     }
                         
                     print(json.dumps(data))
-                    #sys.stdout.flush()   
-                    page.close()
-                    browser.close()                        
+                    #sys.stdout.flush()                     
                     remove_folders(profile_dir)
                     
                     # tidak_ada_kuota = page.locator("span.QuotaDetail__style__title").nth(5).text_content()
@@ -70,9 +74,7 @@ with sync_playwright() as p:
                         
                         print(json.dumps(data))
                         #sys.stdout.flush()   
-                        page.close()
-                        browser.close()
-                        
+
                         remove_folders(profile_dir)
                     except:
                         span_text = page.text_content("span.QuotaDetail__style__t1")
@@ -97,8 +99,6 @@ with sync_playwright() as p:
                         
                         print(json.dumps(data))
                         #sys.stdout.flush()   
-                        page.close()
-                        browser.close()
                         
                         remove_folders(profile_dir)
             else:
@@ -125,11 +125,8 @@ with sync_playwright() as p:
                             
                         print(json.dumps(data))
                         #sys.stdout.flush()   
-                        page.close()
-                        browser.close()                        
+                
                         remove_folders(profile_dir)
-                    
-                    # tidak_ada_kuota = page.locator("span.QuotaDetail__style__title").nth(5).text_content()
                     except:
                         try:
                             page.locator("span.QuotaDetail__style__title").nth(5).text_content() == "Anda tidak memiliki kuota"
@@ -140,8 +137,6 @@ with sync_playwright() as p:
                             
                             print(json.dumps(data))
                             #sys.stdout.flush()   
-                            page.close()
-                            browser.close()
                             
                             remove_folders(profile_dir)
                         except:
@@ -167,8 +162,6 @@ with sync_playwright() as p:
                             
                             print(json.dumps(data))
                             #sys.stdout.flush()   
-                            page.close()
-                            browser.close()
                             
                             remove_folders(profile_dir)
                 except:
@@ -196,8 +189,7 @@ with sync_playwright() as p:
                         
                         print(json.dumps(data))
                         #sys.stdout.flush()
-                        page.close()
-                        browser.close()
+                       
                         remove_folders(profile_dir)
                     elif authorize_mytelkomsel_element.is_visible():
                         data = {
@@ -206,8 +198,7 @@ with sync_playwright() as p:
                         }
                         print(json.dumps(data))
                         #sys.stdout.flush()
-                        page.close()
-                        browser.close()
+                        
                         remove_folders(profile_dir)
                     else:
                         page.wait_for_load_state("networkidle")
@@ -224,8 +215,7 @@ with sync_playwright() as p:
                             }
                             print(json.dumps(data))
                             sys.stdout.flush()
-                            page.close()
-                            browser.close() 
+                            
                             remove_folders(profile_dir)
                         else:
                             page.wait_for_load_state("networkidle")
@@ -252,8 +242,7 @@ with sync_playwright() as p:
                             
                             print(json.dumps(data))
                             #sys.stdout.flush()   
-                            page.close()
-                            browser.close()
+                            
                             
                             remove_folders(profile_dir)
         except TimeoutError as e:
@@ -263,8 +252,7 @@ with sync_playwright() as p:
             }
             print(json.dumps(data))
             sys.stdout.flush()
-            page.close()
-            browser.close()
+          
             with open(
                         "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
@@ -276,12 +264,21 @@ with sync_playwright() as p:
                 }
             print(json.dumps(data))
             #sys.stdout.flush()
-            page.close()
-            browser.close()
+           
             remove_folders(profile_dir)
 
             with open(
                     "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
                 file.write(f"update client {datetime.datetime.now()} {trimedUsername} error: {e}\n")
+        finally:
+            for page in browser.pages:
+                print(page.url)
+                if page.url == "about:blank":
+                    page.close()
+                    print(page.is_closed())
+                else:
+                    page.close()            
+            browser.close()
+
         
