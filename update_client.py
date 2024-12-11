@@ -3,8 +3,8 @@ import os
 from playwright.sync_api import sync_playwright
 import sys
 import datetime
-import time
-
+import shutil
+import tempfile
 from remove_folders import remove_folders
 
 username = sys.argv[1]
@@ -12,9 +12,6 @@ password = sys.argv[2]
 
 trimedPassword = password.replace(" ", "")
 trimedUsername = username.replace(" ", "")
-
-# trimedPassword = "batiku232"
-# trimedUsername = "@KramatPezzo"
 
 profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
@@ -29,9 +26,9 @@ with sync_playwright() as p:
             executable_path="C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
             user_data_dir=f"{profile_dir}",
             args=["--disable-notifications", "--disable-logging"],
-            slow_mo=5000
+            slow_mo=5000,
+            bypass_csp=True
         )
-                
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
         page.wait_for_load_state("networkidle")
@@ -294,7 +291,9 @@ with sync_playwright() as p:
                 if page.url == "about:blank":
                     page.close()
                 else:
-                    page.close()            
+                    page.close()        
+            temp_dir = tempfile.gettempdir()
+            shutil.rmtree(temp_dir, ignore_errors=True)
             browser.close()
 
 

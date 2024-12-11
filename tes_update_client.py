@@ -14,7 +14,7 @@ from remove_folders import remove_folders
 # trimedUsername = username.replace(" ", "")
 
 trimedPassword = "batiku232"
-trimedUsername = "@dimaserang"
+trimedUsername = "@MoradiFatmawati"
 
 profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
@@ -34,9 +34,7 @@ with sync_playwright() as p:
         # for page in browser.pages:
         #     if page.url == "about:blank":
         #         print("Closing lingering 'about:blank' page")
-        #         page.close()
-        print(browser.pages)
-                
+        #         page.close()                
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
         page.wait_for_load_state("networkidle")
@@ -242,8 +240,6 @@ with sync_playwright() as p:
                             
                             print(json.dumps(data))
                             #sys.stdout.flush()   
-                            
-                            
                             remove_folders(profile_dir)
         except TimeoutError as e:
             data = {
@@ -257,6 +253,8 @@ with sync_playwright() as p:
                         "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
                 file.write(f"create client {datetime.datetime.now()} {trimedUsername} error: element not found \n")
+                
+            remove_folders(profile_dir)
         except Exception as e:
             data = {
                 "status" : "failed",
@@ -273,10 +271,8 @@ with sync_playwright() as p:
                 file.write(f"update client {datetime.datetime.now()} {trimedUsername} error: {e}\n")
         finally:
             for page in browser.pages:
-                print(page.url)
                 if page.url == "about:blank":
                     page.close()
-                    print(page.is_closed())
                 else:
                     page.close()            
             browser.close()

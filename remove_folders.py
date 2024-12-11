@@ -1,15 +1,15 @@
 import os
 import shutil
-
+import tempfile
 
 # List of folders to delete
 folders_to_delete = [
-    "ShaderCache",
     "GrShaderCache",
     "Crashpad",
     "BrowserMetrics",
     "Safe Browsing",
     "component_crx_cache",
+    "screen_ai"
 ]
 
 def remove_folders(profile_path):
@@ -22,11 +22,11 @@ def remove_folders(profile_path):
                 #print(f"Deleted: {folder_path}")
             except Exception as e:
                 with open(
-                "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
+                "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
                 ) as file:
                     file.write(f"{e}")
         else:
             with open(
-                "C:\\xampp\\htdocs\\get_kuota_script\\new_akun_twt.txt", "a"
+                "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
                 file.write("folder not found")
