@@ -4,12 +4,8 @@ import tempfile
 
 # List of folders to delete
 folders_to_delete = [
-    "GrShaderCache",
-    "Crashpad",
-    "BrowserMetrics",
-    "Safe Browsing",
-    "component_crx_cache",
-    "screen_ai"
+   "Code Cache",
+   "Cache"
 ]
 
 def remove_folders(profile_path):

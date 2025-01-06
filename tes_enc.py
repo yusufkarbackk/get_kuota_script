@@ -3,6 +3,7 @@ import os
 from playwright.sync_api import sync_playwright
 import sys
 import datetime
+from remove_folders import remove_folders
 
 trimedPassword = "batiku232"
 trimedUsername = "@Kalsel2Sxt3"
@@ -23,23 +24,17 @@ with sync_playwright() as p:
             slow_mo=5000
         )
         # Event listener for network requests
-        def on_request(request):
-            print(">> Request:", request.url)
-            print("   Method:", request.method)
-            print("   Resource Type:", request.resource_type)
-            print("   Headers:", request.headers)
-
-        # Event listener for network responses
-        def on_response(response):
-            print("<< Response:", response.url)
-            print("   Status:", response.status)
-            print("   Headers:", response.headers)
+        # Log network requests
+        def log_request(request):
+            if "Authorization" in request.headers:
+                print("Auth Token Found:", request.headers["Authorization"])
+            if request.url.endswith("cookie"):
+                print("Cookies:", request.all_headers())
 
    
         page = browser.new_page()
         # Attach the listeners to the page
-        page.on("request", on_request)
-        page.on("response", on_response)
+        page.on("request", log_request)
         page.goto("https://my.telkomsel.com/login/web")
 
         profile_div = page.locator("div.HeaderNavigationV2__style__profile")
@@ -110,6 +105,8 @@ with sync_playwright() as p:
                     "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
                 file.write(f"create client {datetime.datetime.now()} {trimedUsername} error: {e}\n")
+        finally:
+            remove_folders(profile_dir+"\\Default")
         
 
 def monitor_network():
@@ -119,26 +116,15 @@ def monitor_network():
         context = browser.new_context()
         page = context.new_page()
 
-        # Event listener for network requests
-        def on_request(request):
-            print(">> Request:", request.url)
-            print("   Method:", request.method)
-            print("   Resource Type:", request.resource_type)
-            print("   Headers:", request.headers)
-
-        # Event listener for network responses
-        def on_response(response):
-            if "json" in response.headers.get("content-type", ""):
-                print("JSON Response:", response.url)
-                print("Response Body:", response.body().decode())
-            else:
-                print("<< Response:", response.url)
-                print("   Status:", response.status)
-                print("   Headers:", response.headers)
-
+        # Log network requests
+        def log_request(request):
+            if "Authorization" in request.headers:
+                print("Auth Token Found:", request.headers["Authorization"])
+            if request.url.endswith("cookie"):
+                print("Cookies:", request.all_headers())
+                
         # Attach the listeners to the page
-        page.on("request", on_request)
-        page.on("response", on_response)
+        page.on("request", log_request)
 
         # Navigate to the target website
         page.goto("https://my.telkomsel.com/login/web")

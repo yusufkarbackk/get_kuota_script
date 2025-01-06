@@ -3,18 +3,13 @@ import os
 from playwright.sync_api import sync_playwright
 import sys
 import datetime
-import time
-
+import shutil
+import tempfile
 from remove_folders import remove_folders
 
-# username = sys.argv[1]
-# password = sys.argv[2]
-
-# trimedPassword = password.replace(" ", "")
-# trimedUsername = username.replace(" ", "")
 
 trimedPassword = "batiku232"
-trimedUsername = "@MoradiFatmawati"
+trimedUsername = "@KaltimSxt8"
 
 profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
 
@@ -29,12 +24,9 @@ with sync_playwright() as p:
             executable_path="C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
             user_data_dir=f"{profile_dir}",
             args=["--disable-notifications", "--disable-logging"],
-            slow_mo=5000
+            slow_mo=5000,
+            bypass_csp=True
         )
-        # for page in browser.pages:
-        #     if page.url == "about:blank":
-        #         print("Closing lingering 'about:blank' page")
-        #         page.close()                
         page = browser.new_page()
         page.goto("https://my.telkomsel.com/login/web")
         page.wait_for_load_state("networkidle")
@@ -44,24 +36,28 @@ with sync_playwright() as p:
         gagal_masuk_dengan_akun_sosial = page.locator("div.DialogSocialLoginError__style__title", has_text="Gagal Masuk dengan Akun Sosial")
         authorize_mytelkomsel_element = page.locator("h2", has_text="Authorize MyTelkomsel App to access your account?")
         profile_div = page.locator("div.HeaderNavigationV2__style__profile")
-        
+        page.reload()
         try:
             if profile_div.is_visible(): #logged in
                 page.goto("https://my.telkomsel.com/detail-quota/internet")
                 try:
+                    page.reload()
                     page.wait_for_selector("span.QuotaDetail__style__t1", timeout=5000)
                     gagal_muat_data_element = page.locator("span.QuotaDetail__style__t1").text_content()
-                    gagal_muat_data_element == "Gagal Memuat Data"
-                    data = {
-                            "status" : "failed",
-                            "message" : "Gagal Memuat Data",
-                    }
-                        
-                    print(json.dumps(data))
-                    #sys.stdout.flush()                     
-                    remove_folders(profile_dir)
-                    
-                    # tidak_ada_kuota = page.locator("span.QuotaDetail__style__title").nth(5).text_content()
+                    if gagal_muat_data_element == "Gagal Memuat Data":
+                        data = {
+                                "status" : "failed",
+                                "message" : "Gagal Memuat Data",
+                        }
+                            
+                        print(json.dumps(data))
+                    else:
+                        data = {
+                                "status" : "failed",
+                                "message" : gagal_muat_data_element,
+                        }
+                            
+                        print(json.dumps(data))
                 except:
                     try:
                         page.locator("span.QuotaDetail__style__title").nth(5).text_content() == "Anda tidak memiliki kuota"
@@ -73,13 +69,11 @@ with sync_playwright() as p:
                         print(json.dumps(data))
                         #sys.stdout.flush()   
 
-                        remove_folders(profile_dir)
                     except:
                         span_text = page.text_content("span.QuotaDetail__style__t1")
                         trimmed_text = span_text.split()[0]
                         unit = span_text.split()[1]
                         # quota = "{:.2f}".format(float(688.81) / 1024)
-
                         if unit == "GB":
                             quota = float(trimmed_text)
                         elif unit == "MB":
@@ -90,15 +84,9 @@ with sync_playwright() as p:
                             "quota" : quota,
                             'unit' : unit
                         }
-                        with open(
-                            "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
-                        ) as file:
-                            file.write(f"{data}\n")
                         
                         print(json.dumps(data))
-                        #sys.stdout.flush()   
                         
-                        remove_folders(profile_dir)
             else:
                 page.click("div.DialogInstallPWADesktop__style__closeIcon") 
 
@@ -124,7 +112,6 @@ with sync_playwright() as p:
                         print(json.dumps(data))
                         #sys.stdout.flush()   
                 
-                        remove_folders(profile_dir)
                     except:
                         try:
                             page.locator("span.QuotaDetail__style__title").nth(5).text_content() == "Anda tidak memiliki kuota"
@@ -136,7 +123,6 @@ with sync_playwright() as p:
                             print(json.dumps(data))
                             #sys.stdout.flush()   
                             
-                            remove_folders(profile_dir)
                         except:
                             span_text = page.text_content("span.QuotaDetail__style__t1")
                             trimmed_text = span_text.split()[0]
@@ -161,7 +147,6 @@ with sync_playwright() as p:
                             print(json.dumps(data))
                             #sys.stdout.flush()   
                             
-                            remove_folders(profile_dir)
                 except:
                     page.click('text="Masuk dengan metode lain"')
                     page.click('text="Masuk Dengan Twitter"')
@@ -188,7 +173,6 @@ with sync_playwright() as p:
                         print(json.dumps(data))
                         #sys.stdout.flush()
                        
-                        remove_folders(profile_dir)
                     elif authorize_mytelkomsel_element.is_visible():
                         data = {
                             "status" : "failed",
@@ -197,7 +181,6 @@ with sync_playwright() as p:
                         print(json.dumps(data))
                         #sys.stdout.flush()
                         
-                        remove_folders(profile_dir)
                     else:
                         page.wait_for_load_state("networkidle")
                         page.wait_for_selector("div.HeaderNavigationV2__style__profile", state='visible', timeout=300000)
@@ -214,10 +197,18 @@ with sync_playwright() as p:
                             print(json.dumps(data))
                             sys.stdout.flush()
                             
-                            remove_folders(profile_dir)
                         else:
                             page.wait_for_load_state("networkidle")
                             page.wait_for_selector("span.QuotaDetail__style__t1", state='visible', timeout=30000)
+                            span_text = page.text_content("span.QuotaDetail__style__t1")
+                            trimmed_text = span_text.split()[0]
+                            unit = span_text.split()[1]
+                            # quota = "{:.2f}".format(float(688.81) / 1024)
+
+                            if unit == "GB":
+                                quota = float(trimmed_text)
+                            elif unit == "MB":
+                                quota = "{:.2f}".format(float(trimmed_text) / 1024)
                             span_text = page.text_content("span.QuotaDetail__style__t1")
                             trimmed_text = span_text.split()[0]
                             unit = span_text.split()[1]
@@ -231,16 +222,12 @@ with sync_playwright() as p:
                             data = {
                                 "status" : "success",
                                 "quota" : quota,
+                                'unit' : unit,
+                                "status" : "success",
+                                "quota" : quota,
                                 'unit' : unit
                             }
-                            with open(
-                                "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
-                            ) as file:
-                                file.write(f"{data}\n")
-                            
                             print(json.dumps(data))
-                            #sys.stdout.flush()   
-                            remove_folders(profile_dir)
         except TimeoutError as e:
             data = {
                 "status" : "failed",
@@ -253,8 +240,6 @@ with sync_playwright() as p:
                         "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
                 file.write(f"create client {datetime.datetime.now()} {trimedUsername} error: element not found \n")
-                
-            remove_folders(profile_dir)
         except Exception as e:
             data = {
                 "status" : "failed",
@@ -263,8 +248,6 @@ with sync_playwright() as p:
             print(json.dumps(data))
             #sys.stdout.flush()
            
-            remove_folders(profile_dir)
-
             with open(
                     "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
             ) as file:
@@ -274,7 +257,9 @@ with sync_playwright() as p:
                 if page.url == "about:blank":
                     page.close()
                 else:
-                    page.close()            
-            browser.close()
+                    page.close()        
+            temp_dir = tempfile.gettempdir()
+            shutil.rmtree(temp_dir, ignore_errors=True)
+            remove_folders(profile_dir+"\\Default")
 
-        
+            # browser.close()
