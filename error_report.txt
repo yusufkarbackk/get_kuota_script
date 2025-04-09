@@ -53,4 +53,4 @@ folder not foundfolder not foundupdate client 2025-01-06 16:59:00.244310 srgesxt
 Call log:
 waiting for locator("text=\"Masuk dengan metode lain\"")
 
-folder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not found
+folder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not foundfolder not found

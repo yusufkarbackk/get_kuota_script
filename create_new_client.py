@@ -1,23 +1,25 @@
 import json
 import os
+from dotenv import load_dotenv
+
 from playwright.sync_api import sync_playwright
 import sys
 import datetime
 import time
-
+load_dotenv()
 from remove_folders import remove_folders
 
-username = sys.argv[1]
-password = sys.argv[2]
+# username = sys.argv[1]
+# password = sys.argv[2]
 
-trimedPassword = password.replace(" ", "")
-trimedUsername = username.replace(" ", "")
+# trimedPassword = password.replace(" ", "")
+# trimedUsername = username.replace(" ", "")
     
-# trimedPassword = "batiku232"
-# trimedUsername = "@KramatPezzo"
+trimedPassword = "batiku232"
+trimedUsername = "libesxt40590"
 
-profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
-
+profile_dir =  f"C:\\Users\\BATI\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
+print(profile_dir)
 chrome_profile = f"profile-{trimedUsername}"
 # Check if the directory exists, if not, create it
 if not os.path.exists(profile_dir):
@@ -48,7 +50,10 @@ with sync_playwright() as p:
             except:
                     page.click('text="Masuk dengan metode lain"')
                     page.click('text="Masuk Dengan Twitter"')
-                    page.click("#allow")
+                    try:
+                        page.click("#allow")
+                    except:
+                        pass
                     try:
                         page.click("#allow")
                     except:
@@ -153,8 +158,8 @@ with sync_playwright() as p:
             browser.close()
             remove_folders(profile_dir)
 
-            with open(
-                    "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
-            ) as file:
-                file.write(f"update client {datetime.datetime.now()} {trimedUsername} error: {e}\n")
+            # with open(
+            #         "C:\\xampp\\htdocs\\get_kuota_script\\error_report.txt", "a"
+            # ) as file:
+            #     file.write(f"update client {datetime.datetime.now()} {trimedUsername} error: {e}\n")
         

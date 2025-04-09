@@ -13,7 +13,7 @@ password = sys.argv[2]
 trimedPassword = password.replace(" ", "")
 trimedUsername = username.replace(" ", "")
 
-profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedUsername}"
+profile_dir =  os.getenv('PROFILE_DIR')+trimedUsername
 
 chrome_profile = f"profile-{trimedUsername}"
 # Check if the directory exists, if not, create it

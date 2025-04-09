@@ -1,10 +1,11 @@
 import csv
 import json
 import os
+from dotenv import load_dotenv
 import sys
 from playwright.sync_api import sync_playwright
-import db
 import datetime
+load_dotenv()
 
 csv_path = sys.argv[1]
 
@@ -22,7 +23,7 @@ with open(csv_path, mode='r') as file:
     # Iterate through each row in the CSV
     for row in csv_reader:
         trimedSite = row[1].replace(" ", "")
-        profile_dir =  f"C:\\Users\\Administrator\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\profile-{trimedSite}"
+        profile_dir =  os.getenv('PROFILE_DIR')+trimedSite
 
         chrome_profile = f"profile-{trimedSite}"
         # Check if the directory exists, if not, create it
